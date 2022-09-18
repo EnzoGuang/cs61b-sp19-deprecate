@@ -87,4 +87,9 @@ public class Body{
 		xxVel = v_new_x;
 		yyVel = v_new_y;
 	}
+
+	public void draw(){
+		String filename = "./images/" + this.imgFileName;
+		StdDraw.picture(this.xxPos, this.yyPos, filename);
+	}
 }
