@@ -82,7 +82,30 @@ public class IntList {
 
     public static IntList dcatenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        //return null;
+        IntList tempA = A;
+        IntList tempB = B;
+        if(A == null && B == null){
+            return null;
+        }
+        else if(A == null){
+            return B;
+        }
+        else if(B == null){
+            return A;
+        }
+        else{
+            while(true){ //只需要修改列表A最末尾节点rest的值，原本为null，让它指向列表B的首节点
+                if(tempA.rest != null) {
+                    tempA = tempA.rest;
+                }
+                else{
+                    tempA.rest = B;
+                    break;
+                }
+            }
+            return A;
+        }
     }
 
     /**
@@ -91,7 +114,49 @@ public class IntList {
      */
     public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
-        return null;
+        //return null;
+
+        if(A == null && B == null){
+            return null;
+        }
+        else if(A == null){
+            return B;
+        }
+        else if(B == null){
+            return A;
+        }
+        else{
+            IntList tempA = A;
+            IntList tempB = B;
+            IntList headNew = new IntList(tempA.first, tempA.rest);
+            IntList tempNew = headNew;
+            tempA = tempA.rest;
+
+            while(true){
+                if(tempNew.rest != null){
+                    tempNew.rest = new IntList(tempA.first, tempA.rest);
+                    tempNew = tempNew.rest;
+                    tempA = tempA.rest;
+                }
+                else{
+                    tempNew.rest = new IntList(tempB.first, tempB.rest);
+                    tempNew = tempNew.rest;
+                    tempB = tempB.rest;
+                    break;
+                }
+            }
+            while(true){
+                if(tempNew.rest != null){
+                    tempNew = new IntList(tempB.first, tempB.rest);
+                    tempB = tempB.rest;
+                    tempNew = tempNew.rest;
+                }
+                else{
+                    break;
+                }
+            }
+            return headNew;
+        }
     }
 
 

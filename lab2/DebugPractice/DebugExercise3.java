@@ -9,9 +9,12 @@ public class DebugExercise3 {
             String foodType = in.readString();
             double cost = in.readDouble();
             int numAvailable = in.readInt();
+
             if (foodType.equals("turnip")) {
-                int newTotal = totalTurnips + numAvailable;
-                totalTurnips = newTotal;
+                //System.out.println("vendor: " + vendor + " numAvailable:" + numAvailable);
+                //int newTotal = totalTurnips + numAvailable;
+                //totalTurnips = newTotal;
+                totalTurnips = totalTurnips + numAvailable;
             }
             in.readLine();
         }
