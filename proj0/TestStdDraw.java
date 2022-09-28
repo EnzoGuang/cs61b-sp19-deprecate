@@ -23,6 +23,6 @@ public class TestStdDraw {
             // }
             StdDraw.setScale(-2, +2);
             StdDraw.picture(0, 0, "./images/starfield.jpg");
-            StrDraw.picture()
+            StrDraw.picture();
        }
    }
