@@ -14,7 +14,6 @@ public class Sort{
 		int smallestIndex = findSmallest(x, start);
 		swap(x, start, smallestIndex);
 		sort(x, start + 1);
-
 	}
 
 	/** Return the smallest string's index in x, starting at start;
@@ -38,5 +37,4 @@ public class Sort{
 		x[a] = x[b];
 		x[b] = temp;
 	}
-
 }
